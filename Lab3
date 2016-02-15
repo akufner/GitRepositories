@@ -40,3 +40,22 @@ Exercise Questions 5
 6. https://paleobiodb.org/data1.2/colls/list.csv?base_name=Mammut&interval=Miocene,Pleistocene&show=paleolng,paleolat
 
 Exercise Question 6
+
+> downloaddata<-function(taxon="TAXON", interval="INTERVAL") {
++ 
++ starthtml<-"http://paleobiodb.org/data1.2/occs/list.csv?base_name="
++ 
++ int<-"&interval="
++ 
++ GetData<-paste(starthtml, taxon, int, interval, sep="")
++ 
++ GetData1<-read.csv(GetData)
++ 
++ GetData1
++ 
++ }
+
+Morphologic Measurements
+1. No I can't.
+2. Smithian (Early Triassic) ammonoid faunas from northwestern Guangxi (South China): taxonomy and biochronology
+3. 10, 15, 17, 22, 25
