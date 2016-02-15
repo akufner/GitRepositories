@@ -1,0 +1,5 @@
+Problem Set 1
+1. Miocene: 602, Early Jurassic: 169, Cretaceous: 375, Pennsylvanian: 133 >apply(PresencePBDB, 1, sum)
+2. 29 > dim(PresencePBDB)
+3. None >which(PresencePBDB == "Mytilus")
+4. 
