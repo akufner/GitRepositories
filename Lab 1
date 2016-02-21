@@ -1,19 +1,26 @@
 Beginner
 1. data.frame, class()
 2. vector, dim() did not work
-3. .....
+*3. ...
 4. Atlanta
 5. c(mtcars, precip, trees)
 6. Yes, class(precip)
 7. mtcars[2,7]
-8. 
-9. 
-10. 
+*8. ...
+*9. No, but I still don't know how to use code to figure it out.
+*10. Can't get B, A=2356, C=242.1 
 
 Intermediate
-1. 
-2. 
-3. 
+
+Section 1
+*1. ...
+2. MyMatrix*1
+3. ...
+
+Section 2
+1. ...
+2. ...
+3. ...
 4. 
 5. 
 6. 
