@@ -1,0 +1,37 @@
+Problem Set 1
+1. 634, sum(which(BivalveAbundance ["Miocene",] != 0)^0)
+2. 0.9565217
+Bart<-sum(which(BrachiopodAbundance ["Pliocene",] != 0)^0)
+Ceres<-max(BrachiopodAbundance["Pliocene",])
+Ceres/Bart
+3. 0.9784588
+Daisy<-BrachiopodAbundance["Late Ordovician",]
+Eeyore<-1-sum((Daisy/sum(Daisy))^2)
+4. 5.086654
+Fabio<-BivalveAbundance["Late Cretaceous",]
+Harry<-Fabio[Fabio>0]
+Goofy<- -sum((Harry/sum(Harry))*log(Harry/sum(Harry)))
+5. > Igor<-BivalveAbundance["Paleocene",]
+> Jessie<-Igor[Igor>0]
+> Krabs<- -sum((Jessie/sum(Jessie))*log(Jessie/sum(Jessie)))
+> Krabs
+[1] 4.511875
+6. 11.3% decrease K-Pg event!  Yes, there is less diversity in the Paleocene than the Late Cretaceous according to my calculations using Shannon's entropy.
+7. 43.7% decrease, I think this value better reflects the loss of biodiversity because it was a mass extinction followed by an adaptive radiation of (mostly) mammals, so one would expect a large amount of ecological niches to be opened up.
+
+Problem Set 2
+1. 
+2. 
+3. 
+4. 
+
+Problem Set 3
+1. 
+2. 
+3. 
+
+Problem Set 4
+1. 
+2. 
+3. 
+4. 
