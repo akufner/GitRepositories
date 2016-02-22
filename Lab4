@@ -7,12 +7,14 @@ Paleocene, Oligocene, Miocene, Early Jurassic, Pleistocene, Middle Triassic, Lat
 4. Middle and Late Devonian, Mississippian, Pennsylvanian, Guadalupian, Lopingian. Mytilus is present before and after these epochs.
 
 Problem Set 2
+To generate a Jaccard similarity index of the Miocene and Pleistocene samples, I would take the sum of the genera that are common between both time periods and divide by the total sum of genera present in both time periods.  To make it into an index of dissimilarity I would use the some of genera unique to each time period in the numerator and leave the denominator the same.
 1. 
 2.
 3.
 4.
 
 Problem Set 3
+To find the epochs that are the most dissimilar the index of dissimilarity would be closer to 1, so the two epochs with the highest index would be compared.  The high index of dissimilarity between the early Cretaceous and Paleocene epochs is likely due to the K-T mass extinction event.
 1.
 2.
 3.
@@ -20,6 +22,7 @@ Problem Set 3
 5.
 
 Problem Set 4
+I'm not quite sure how to do this one without using R.
 1.
 2.
 3.
