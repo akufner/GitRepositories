@@ -8,8 +8,8 @@ Paleocene, Oligocene, Miocene, Early Jurassic, Pleistocene, Middle Triassic, Lat
 
 Problem Set 2
 To generate a Jaccard similarity index of the Miocene and Pleistocene samples, I would take the sum of the genera that are common between both time periods and divide by the total sum of genera present in both time periods.  To make it into an index of dissimilarity I would use the some of genera unique to each time period in the numerator and leave the denominator the same.
-1. 
-2.
+1. 0.8279221
+2. 
 3.
 4.
 
