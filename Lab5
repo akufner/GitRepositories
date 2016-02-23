@@ -49,6 +49,12 @@ Pleistocene
 > StandardizedRichness1[1:6]
     Mississippian     Pennsylvanian  Early Ordovician Middle Ordovician   Late Ordovician        Llandovery 
             42.92             34.03             37.88             45.84             41.96             41.24
-2) 
-3) 
-4) 
+2) It is more strongly negatively correlated than the unstandardized value since it is closer to -1.
+> BrachiopodOrder<- StandardizedRichness1[c("Early Ordovician", "Middle Ordovician", "Late Ordovician", "Llandovery", "Wenlock", "Ludlow", "Pridoli", "Early Devonian", "Middle Devonian", "Late Devonian", "Mississippian", "Pennsylvanian", "Cisuralian", "Guadalupian", "Lopingian", "Early Triassic", "Middle Triassic", "Late Triassic", "Early Jurassic", "Middle Jurassic", "Late Jurassic", "Early Cretaceous", "Late Cretaceous", "Paleocene", "Eocene", "Oligocene", "Miocene", "Pliocene")]
+# similarly for Bivalves
+> cor(BivalveOrder, BrachiopodOrder)
+[1] -0.4972689
+3) > plot(x=LINEEMUP1, y=LINEEMUP, pch=16,las=1,xlab="Brachiopod Unstandardized Richness",ylab="Bivalve Unstandardized Richness",cex=2)
+> plot(x=BrachiopodOrder, y=BivalveOrder, pch=16,las=1,xlab="Brachiopod Standardized Richness",ylab="Bivalve Standardized Richness",cex=2)
+I think an interesting note is that the unstandardized plot takes on the shape of a hollow curve which is the expectation for distributions in ecology.  The standardized plot appears to show more correlation, so standardizing will change the results of an experiment and therefore does matter.  I hesitate to say it made a great deal of difference in this case, but I am unfamiliar with these types of experiments and for all I know a 0.5 correlation might be a great result showing a significant correlation between bivalve and brachiopod diversity.
+4) I think it shows that there is a weak correlation between bivalve and brachiopod abundance, but that is a far cry from saying bivalves outcompeted brachiopods over time.  So no I don't think there is enough evidence to come to that conclusion based solely on these correlations.  There could have been other factors such as climate change or competition with other organisms that caused a decline in brachiopod abundance and subsequent rise in bivalve abundance.
