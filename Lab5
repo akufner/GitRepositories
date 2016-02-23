@@ -30,12 +30,25 @@ specnumber(BivalveAbundance ["Miocene",])
 [1] 4.511875
 
 Problem Set 3
-1) 
-2) 
-3) 
+1) Negatively but weakly correlated -0.2973809
+OUTOFORDER1<-rowSums(BrachiopodAbundance)
+> LINEEMUP1<- OUTOFORDER1[c("Early Ordovician", "Middle Ordovician", "Late Ordovician", "Llandovery", "Wenlock", "Ludlow", "Pridoli", "Early Devonian", "Middle Devonian", "Late Devonian", "Mississippian", "Pennsylvanian", "Cisuralian", "Guadalupian", "Lopingian", "Early Triassic", "Middle Triassic", "Late Triassic", "Early Jurassic", "Middle Jurassic", "Late Jurassic", "Early Cretaceous", "Late Cretaceous", "Paleocene", "Eocene", "Oligocene", "Miocene", "Pliocene")]
+> cor(LINEEMUP, LINEEMUP1)
+# similarly for BivalveAbundance
+2) Negatively but weakly correlated.
+> cor(diversity(BrachiopodAbundance, index="simpson"), diversity(BivalveAbundance, index="simpson"))
+[1] -0.2624135
+3) Lopingian - Early Triassic
 
 Problem Set 4
-1) 
+1) > SampleAbundances1<-apply(BrachiopodAbundance, 1, sum)
+> SampleAbundances1[which(SampleAbundances1 == min(SampleAbundances1))]
+Pleistocene 
+           63
+> StandardizedRichness1<-apply(BrachiopodAbundance,1,subsampleIndividuals,Quota=63)
+> StandardizedRichness1[1:6]
+    Mississippian     Pennsylvanian  Early Ordovician Middle Ordovician   Late Ordovician        Llandovery 
+            42.92             34.03             37.88             45.84             41.96             41.24
 2) 
 3) 
 4) 
