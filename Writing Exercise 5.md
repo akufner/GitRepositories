@@ -1,0 +1,20 @@
+## Writing Exercise 5
+
+Global Biodiversity Scenarios for the Year 2100 by Osvaldo E. Sala et al.
+
+> Please add section headings in the future. 10/10
+
+### Summary
+
+The authors of this article developed a model to map global biodiversity in the year 2100 based on five known drivers of change and their effects on biodiversity in the year 2000.  The five drivers used in this study are land use, climate, atmospheric CO2 concentration, nitrogen deposition and acid rain, and biotic exchanges.  They used ten biomes to assess the amount that each driver would be expected change by the year 2100 with small changes being ranked 1 and large changes being ranked 5.  Then they also ran tests to see what would be projected if: there were no interactions between drivers, the only response is to the driver to which the biome is most sensitive (antagonistic interactions), and biodiversity responds to the effects multiple drivers that multiply their effects (synergistic interactions).  Their findings indicate that, as would be expected, different drivers do not have the same effect in different biomes.  They found that the biomes that are projected to experience the most impact are freshwater systems and Mediterranean climates.  The most effective driver overall is land use followed by climate change.  
+
+### Likes
+I liked this article.  It was very easy to follow, and the study itself was intuitive.  I like that they chose to look at individual effects of drivers on different biomes and to look at the overall effects that the interactions, or lack thereof, of the drivers may have on each biome.  The ranking system was simple which made it easy to understand, but for some reason I feel it may have been too simple.  I like that they explained the effects that are likely to have the most impact in each biome.  It was represented in the graph, but it made the results more tangible to understand why certain drivers were given their ranking in each biome.  The article also helped to drive home the point that biodiversity is affected by a complex interaction of environmental factors, many of which are being influenced by human development.  
+
+### Dislikes
+There was not much that I did not like about this article.  I will say that I do not think that it was all-encompassing.  I am not an ecologist by any stretch of the imagination, but I do know that ecological interactions are far more complex than what was presented here, and there may be many factors that were left out that could have a substantial impact on biodiversity in combination with those drivers already presented.  For that reason, I feel like the ranking system was oversimplified.  I am also not sure exactly how the rankings were assigned.  It appears to be subjective which is not the best, but that could just be from my lack of familiarity with the modeling software.  
+
+> This was a common complaint among the class. The ranking system did come across as a bit arbitrary.
+
+### Figures
+The figures were helpful overall.  Table 1 was a very well-organized way to show the results, and even a layperson would have a firm grasp of what is going on.  Table 2 showed the impact that a large change in each driver would have as opposed to the projected changes in Table 1.  Figures 1 and 2 showed the impact of each driver in general and the impact of each driver in each biome respectively reiterating what was shown in Table 1 (and Table 2 with the error bars).  Tables 3 and 4 are the equivalents to Tables 1 and 2 with respect to lakes and streams and not terrestrial habitats.  Figure 3 was my favorite.  I like that it showed the impact expected with no interactions, then with only one driver causing the impact, and with an interaction of the different drivers.  I would like to note the stark contrast between the first and last graph and the second one.  It shows that the interactions have a strong impact on biodiversity, but there also may be important individual factors that affect certain parts of the globe such as the rainforests.
