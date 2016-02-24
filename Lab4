@@ -37,8 +37,12 @@ Middle Jurassic      0.2962963
 5)K-Pg event decimated the large terrestrial and marine fauna roughly 65 mya.
 
 Problem Set 4
-1)
-2)
-3)
-4)
-5)
+1) > Ordovician<-downloadPBDB(Taxa = "Animalia", StartInterval="Ordovician",StopInterval="Ordovician")
+2) > Ordovician<-cleanGenus(Ordovician)
+3) > PresenceOrd<-presenceMatrix(Ordovician,SampleDefinition="geoplate")
+> PresenceOrd<-cullMatrix(PresenceOrd,minOccurrences=2,minDiversity=25)
+4) From what I can see no.  There doesn't appear to be any relationship between the plotted points and the average latitiude or longitude of the samples.  At least not any relationship I would be familiar with.
+> OrdovicianDCA<-decorana(PresenceOrd, ira=0)
+> plot(OrdovicianDCA, display="sites")
+> tapply(Ordovician[,"paleolat"], Ordovician[,"geoplate"], mean)
+> tapply(Ordovician[,"paleolng"], Ordovician[,"geoplate"], mean)
