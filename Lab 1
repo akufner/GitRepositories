@@ -37,8 +37,9 @@ Advanced
 5) 
 
 Expert
-1) 
-2) 
-3) 
-4) 
+1) mean = 34.91571, median = 36.6, sd = 13.33442.
+2) barplot() because the data is discrete.
+3) > RandomNormal<-rnorm(70, mean=34.91571, sd=13.33442)
+???4) > mean(RandomNormal) == mean(precip)
+[1] FALSE
 5) 
