@@ -9,3 +9,13 @@ Problem Set 1
 
 Problem Set 2
 1) > CandidateUnits<-c("Chancellor", "Kinzers Fm", "Stephen Fm", "Marjum Limestone", "Wheeler Shale", "Langston Fm", "Weymouth Fm", "Snowy Range Fm", "Parker Slate", "Forteau Fm")
+2) > GenusFrequencies<-apply(GenusMatrix, 2, sum)
+3) > barplot(table(GenusFrequencies))
+4) Hollow curve
+5) > RareGenera<-GenusFrequencies[GenusFrequencies<=median(GenusFrequencies)]
+
+Problem Set 3
+1) > CandidateMatrix<-GenusMatrix[CandidateUnits,]
+2) Weymouth Fm, Chancellor, Forteau Fm, Marjum Limestone
+These sites have a higher percentage of shared genera with the list of rare genera.
+3) Chancellor!!! The Burgess Shale! I KNEW IT! It contains a large number of soft-bodied animals.  It gives us a rare glimpse at types of organisms present during the Cambrian that are not preserved elsewhere. 
