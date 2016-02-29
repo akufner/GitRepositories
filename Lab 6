@@ -1,0 +1,11 @@
+Problem Set 1
+1) > dim(MacroPBDB)
+[1] 9013   13
+> dim(DataPBDB)
+[1] 34166    26
+> 34166-9013
+[1] 25153
+2) These are likely only North American occurences since the coverage of Macrostrat is limited to North America.
+
+Problem Set 2
+1) > CandidateUnits<-c("Chancellor", "Kinzers Fm", "Stephen Fm", "Marjum Limestone", "Wheeler Shale", "Langston Fm", "Weymouth Fm", "Snowy Range Fm", "Parker Slate", "Forteau Fm")
