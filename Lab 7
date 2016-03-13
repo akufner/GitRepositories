@@ -42,6 +42,7 @@ Problem Set 4
 Problem Set 5
 1) 67617, 59096, 8521 lost
 2) 1018, 532, 52.3%
-3) 
+3) tapply(ExtantData[,"min_ma"], ExtantData[,"genus"], min)
+tapply(ExtantData[,"max_ma"], ExtantData[,"genus"], max)
 4) 
 5) 
