@@ -1,0 +1,31 @@
+Problem Set 1
+1) West
+2) It's using the data from ModernMap to plot the location of the continents.  col=rgb(1,0,0,0.33) makes the map red and opaque.  rgb stands for red, green, blue.  lty=0.01 makes the outlines of the continents.  add=TRUE adds this map to the previous map.
+3) > AlbianMap<-downloadPaleogeography(Age=110)
+4) > plot(AlbianMap, col=rgb(0,1,0,0.33), lty=0.01, add=TRUE)
+5) There appears to be more north and south movement in the Eastern Hemisphere.
+6) Seems to be more movement east and west in the Western Hemisphere.  (Mostly west)
+
+Problem Set 2
+1) > PaleoceneEoceneMap<-downloadPaleogeography(Age=56)
+> plot(PaleoceneEoceneMap, col=rgb(0,0.5,0.5,0.4), lty=0.01)
+2) > DataPBDB<-downloadPBDB(Taxa=c("Anthozoa"),StartInterval="Paleocene",StopInterval="Eocene")
+3) 2847
+4) [1] "occurrence_no": 
+"record_type"     "reid_no"         "flags"           "collection_no"  
+ [6] "identified_name" "identified_rank" "identified_no"   "difference"      "accepted_name"  
+[11] "accepted_rank"   "accepted_no"     "early_interval"  "late_interval"   "max_ma"         
+[16] "min_ma"          "reference_no"    "paleomodel"      "paleolng"        "paleolat"       
+[21] "geoplate"        "phylum"          "class"           "order"           "family"         
+[26] "genus" 
+5) 
+6) 
+
+Problem Set 3
+1) 
+2) 
+3) 
+4) 
+5) 
+6) 
+7) 
