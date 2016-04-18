@@ -1,0 +1,105 @@
+Problem Set 1
+
+1)> TriassicSynapsids<-downloadPBDB("Synapsida", "Anisian", "Rhaetian")
+> TriassicDiapsids<-downloadPBDB("Diapsida", "Anisian", "Rhaetian")
+> JurassicSynapsids<-downloadPBDB("Synapsida", "Jurassic", "Neogene")
+> JurassicDiapsids<-downloadPBDB("Diapsida", "Jurassic", "Neogene")
+> TriassicSynapsids<-cleanRank(TriassicSynapsids, "genus")
+> TriassicDiapsids<-cleanRank(TriassicDiapsids, "genus")
+> JurassicSynapsids<-cleanRank(JurassicSynapsids,"genus")
+> JurassicDiapsids<-cleanRank(JurassicDiapsids,"genus")
+
+2)> TriassicSynapsids<-length(unique(TriassicSynapsids[,"genus"]))
+> TriassicSynapsids
+[1] 116
+> TriassicDiapsids<-length(unique(TriassicDiapsids[,"genus"]))
+> TriassicDiapsids
+[1] 389
+> JurassicSynapsids<-length(unique(JurassicSynapsids[,"genus"]))
+> JurassicSynapsids
+[1] 4688
+> JurassicDiapsids<-length(unique(JurassicDiapsids[,"genus"]))
+> JurassicDiapsids
+[1] 2753
+
+3) TriSyn<-unique(TriassicSynapsids[,"genus"])
+> TriDia<-unique(TriassicDiapsids[,"genus"])
+> JurSyn<-unique(JurassicSynapsids[,"genus"])
+> JurDia<-unique(JurassicDiapsids[,"genus"])
+> SynapsidSurvivors<-intersect(TriSyn, JurSyn)
+> length(SynapsidSurvivors)
+[1] 9
+> DiapsidSurvivors<-intersect(TriDia, JurDia)
+> length(DiapsidSurvivors)
+[1] 37
+> SynapsidVictims<-setdiff(TriSyn, JurSyn)
+> length(SynapsidVictims)
+[1] 107
+> DiapsidVictims<-setdiff(TriDia, JurDia)
+> length(DiapsidVictims)
+[1] 352
+
+4)> SynapsidOdds<-(length(SynapsidSurvivors)/length(JurSyn))/(length(SynapsidVictims)/length(JurSyn))
+> DiapsidOdds<-(length(DiapsidSurvivors)/length(JurDia))/(length(DiapsidVictims)/length(JurDia))
+> OddsRatio<-DiapsidOdds/SynapsidOdds
+> log(OddsRatio)
+[1] 0.222891
+
+5)> StandardError<-sqrt(1/length(SynapsidSurvivors) + 1/length(SynapsidVictims) + 1/length(DiapsidSurvivors) + 1/length(DiapsidVictims))
+> StandardError
+[1] 0.3877175
+> UpperLimit<-log(OddsRatio)+(StandardError*1.96)
+> LowerLimit<-log(OddsRatio)-(StandardError*1.96)
+> UpperLimit
+[1] 0.9828172
+> LowerLimit
+[1] -0.5370353
+No, the lower limit is negative so there is a possibility that there was an advantage for synapsids.
+
+Problem Set 2
+
+1)> Triassic<-downloadPBDB(c("Synapsida", "Diapsida"), "Anisian", "Rhaetian")
+> Jurassic<-downloadPBDB(c("Synapsida", "Diapsida"), "Jurassic", "Neogene")
+> Triassic<-cleanRank(Triassic, "genus")
+> Jurassic<-cleanRank(Jurassic,"genus")
+
+2)> MeanLatJur<-tapply(Jurassic[,"paleolat"],Jurassic[,"genus"],mean)
+> MeanLatTri<-tapply(Triassic[,"paleolat"],Triassic[,"genus"],mean)
+
+3)> TriassicSurvivors<-intersect(unique(Triassic[,"genus"]), unique(Jurassic[,"genus"]))
+> TriassicVictims<-setdiff(unique(Triassic[,"genus"]), unique(Jurassic[,"genus"]))
+
+4)> TriassicSyn<-intersect(unique(Triassic[,"genus"]), TriSyn)
+> TriassicDia<-intersect(unique(Triassic[,"genus"]), TriDia)
+
+5)> TJMatrix<-merge(MeanLatTri,TJVictims,all=TRUE,by="row.names")
+> TJMatrix<-transform(TJMatrix,row.names=Row.names,Row.names=NULL)
+> colnames(TJMatrix)<-c("MeanLatitudes", "Survivor/Victim")
+> TJMatrix[is.na(TJMatrix[,"Survivor/Victim"]),]<-1
+> TJRegression<-glm(TJMatrix[,"Survivor/Victim"]~TJMatrix[,"MeanLatitudes"],family="binomial")
+> summary(TJRegression)
+
+Call:
+glm(formula = TJMatrix[, "Survivor/Victim"] ~ TJMatrix[, "MeanLatitudes"], 
+    family = "binomial")
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.4474  -0.4411  -0.4385  -0.4308   2.1889  
+
+Coefficients:
+                              Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                 -2.3009122  0.1547326  -14.87   <2e-16 ***
+TJMatrix[, "MeanLatitudes"]  0.0007725  0.0051555    0.15    0.881    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 308.10  on 504  degrees of freedom
+Residual deviance: 308.08  on 503  degrees of freedom
+AIC: 312.08
+
+Number of Fisher Scoring iterations: 5
+
+Latitude does not seem to be a good predictor of extinction in the Triassic-Jurassic extinction since each degree in latitude increased survivorship by less than 0.1%.
