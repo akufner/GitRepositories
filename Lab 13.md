@@ -147,12 +147,152 @@ Alpha decreases when measured as a percentage, it means that there are more gene
 #Problem Set 3
 
 1)
+````R
+> OrdovicianMatrix<-abundanceMatrix(LateOrdovician,SampleDefinition="unit_name",TaxonRank="genus")
+> TriassicMatrix<-abundanceMatrix(EarlyTriassic,SampleDefinition="unit_name",TaxonRank="genus")
+> SilurianMatrix<-abundanceMatrix(EarlySilurian,SampleDefinition="unit_name",TaxonRank="genus")
+> PermianMatrix<-abundanceMatrix(LatePermian,SampleDefinition="unit_name",TaxonRank="genus")
+> CretaceousMatrix<-abundanceMatrix(LateCretaceous,SampleDefinition="unit_name",TaxonRank="genus")
+> PaleogeneMatrix<-abundanceMatrix(EarlyPaleogene,SampleDefinition="unit_name",TaxonRank="genus")
+> OrdovicianMatrix<-cullMatrix(OrdovicianMatrix,2,10)
+> SilurianMatrix<-cullMatrix(SilurianMatrix,2,10)
+> TriassicMatrix<-cullMatrix(TriassicMatrix,2,10)
+> PermianMatrix<-cullMatrix(PermianMatrix,2,10)
+> CretaceousMatrix<-cullMatrix(CretaceousMatrix,2,10)
+> PaleogeneMatrix<-cullMatrix(PaleogeneMatrix,2,10)
+````
 
 2)
+````R
+> ShannonOrd<-diversity(OrdovicianMatrix)
+> AlpShaOrd<-mean(ShannonOrd)
+> GamShaOrd<-sum(ShannonOrd)
+> BetaShaOrd<-GamShaOrd-AlpShaOrd
+> AlpShaOrd
+[1] 2.775078
+> BetaShaOrd
+[1] 102.6779
+> GamShaOrd
+[1] 105.453
+
+> ShannonSil<-diversity(SilurianMatrix)
+> AlpShaSil<-mean(ShannonSil)
+> GamShaSil<-sum(ShannonSil)
+> BetaShaSil<-GamShaSil-AlpShaSil
+> AlpShaSil
+[1] 3.214317
+> BetaShaSil
+[1] 151.0729
+> GamShaSil
+[1] 154.2872
+
+> ShannonPerm<-diversity(PermianMatrix)
+> # LOL ^^^
+> AlpShaPerm<-mean(ShannonPerm)
+> GamShaPerm<-sum(ShannonPerm)
+> BetaShaPerm<-GamShaPerm-AlpShaPerm
+> AlpShaPerm
+[1] 3.311213
+> BetaShaPerm
+[1] 69.53547
+> GamShaPerm
+[1] 72.84669
+
+> ShannonTri<-diversity(TriassicMatrix)
+> AlpShaTri<-mean(ShannonTri)
+> GamShaTri<-sum(ShannonTri)
+> BetaShaTri<-GamShaTri-AlpShaTri
+> AlpShaTri
+[1] 2.916701
+> BetaShaTri
+[1] 40.83382
+> GamShaTri
+[1] 43.75052
+
+> #There has to be a better way to do this!
+
+> ShannonCret<-diversity(CretaceousMatrix)
+> AlpShaCret<-mean(ShannonCret)
+> GamShaCret<-sum(ShannonCret)
+> BetaShaCret<-GamShaCret-AlpShaCret
+> AlpShaCret
+[1] 3.320182
+> GamShaCret
+[1] 318.7375
+> BetaShaCret
+[1] 315.4173
+
+> ShannonPal<-diversity(PaleogeneMatrix)
+> AlpShaPal<-mean(ShannonPal)
+> GamShaPal<-sum(ShannonPal)
+> BetaShaPal<-GamShaPal-AlpShaPal
+> AlpShaPal
+[1] 3.462795
+> BetaShaPal
+[1] 412.0726
+> GamShaPal
+[1] 415.5354
+````
 
 3)
+````R
+> AlpShaOrd/GamShaOrd
+[1] 0.02631579
+> BetaShaOrd/GamShaOrd
+[1] 0.9736842
+> GamShaOrd/GamShaOrd
+[1] 1
+> #All of these will be one so this is the only one I'm doing.
+
+> AlpShaSil/GamShaSil
+[1] 0.02083333
+> BetaShaSil/GamShaSil
+[1] 0.9791667
+
+> AlpShaPerm/GamShaPerm
+[1] 0.04545455
+> BetaShaPerm/GamShaPerm
+[1] 0.9545455
+
+> AlpShaTri/GamShaTri
+[1] 0.06666667
+> BetaShaTri/GamShaTri
+[1] 0.9333333
+
+> AlpShaCret/GamShaCret
+[1] 0.01041667
+> BetaShaCret/GamShaCret
+[1] 0.9895833
+
+> AlpShaPal/GamShaPal
+[1] 0.008333333
+> BetaShaPal/GamShaPal
+[1] 0.9916667
+````
 
 4)
+````R
+> AlpShaSil-AlpShaOrd
+[1] 0.4392395
+> AlpShaTri-AlpShaPerm
+[1] -0.3945117
+> AlpShaCret-AlpShaPal
+[1] -0.1426122
+````
+There does not appear to be a trend since it decreased in two cases and increased in one.
+
 5)
+````R
+> AlpShaSil/GamShaSil-AlpShaOrd/GamShaOrd
+[1] -0.005482456
+
+> AlpShaTri/GamShaTri-AlpShaPerm/GamShaPerm
+[1] 0.02121212
+
+> AlpShaPal/GamShaPal-AlpShaCret/GamShaCret
+[1] -0.002083333
+````
+Same deal as the last one...
 
 #Problem 4
+I think that, as a general rule, beta diversity neither increases nor decreases following a mass extinction.
