@@ -46,7 +46,7 @@
 [1] 0.6037736
 
 ````
-Alpha decreases when measured as a percentage, it means that there are more genera that are less widespread. This doesn't match what we learned in class.
+Alpha decreases when measured as a percentage, it means that there are more genera that are less widespread. This doesn't match what we learned in class. What we learned in class only pertained to trilobites.
 
 6)The time intervals are probably not the same length, so there will be some distortion.
 
@@ -72,6 +72,7 @@ Alpha decreases when measured as a percentage, it means that there are more gene
 > dim(PaleogeneMatrix)
 [1]  120 1031
 #The second number for each of these ^ is the gamma diversity.
+
 > meanPerm<-mean(rowSums(PermianMatrix))
 > meanTri<-mean(rowSums(TriassicMatrix))
 > meanCret<-mean(rowSums(CretaceousMatrix))
@@ -85,6 +86,7 @@ Alpha decreases when measured as a percentage, it means that there are more gene
 > meanPal
 [1] 52.83333
 #These are the alpha diversity values
+
 > betaPerm<-311-meanPerm
 > betaTri<-177-meanTri
 > betaCret<-774-meanCret
@@ -114,6 +116,7 @@ Alpha decreases when measured as a percentage, it means that there are more gene
 > perAlphaPal
 [1] 0.05124475
 #These are the alpha biodiversities
+
 > perBetaPerm<-betaPerm/311
 > perBetaTri<-betaTri/177
 > perBetaCret<-betaCret/774
@@ -295,4 +298,4 @@ There does not appear to be a trend since it decreased in two cases and increase
 Same deal as the last one...
 
 #Problem 4
-I think that, as a general rule, beta diversity neither increases nor decreases following a mass extinction.
+I think that, as a general rule, beta diversity neither increases nor decreases following a mass extinction based on the evidence here.
