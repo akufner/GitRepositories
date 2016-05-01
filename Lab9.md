@@ -1,4 +1,7 @@
 #Problem Set 1
+
+> 20/20
+
 1) West
 
 2) It's using the data from ModernMap to plot the location of the continents.  col=rgb(1,0,0,0.33) makes the map red and opaque.  rgb stands for red, green, blue.  lty=0.01 makes the outlines of the continents.  add=TRUE adds this map to the previous map.
