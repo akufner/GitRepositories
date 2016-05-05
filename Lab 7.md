@@ -1,51 +1,103 @@
-Problem Set 1
+> 19.5/20
+
+## Problem Set 1
+
 1) min_ma "at least this many million years old", max_ma "no more than this many million years old"
-2) > tapply(DataPBDB[,"max_ma"], DataPBDB[,"genus"], max)
-3) > tapply(DataPBDB[,"min_ma"], DataPBDB[,"genus"], min)
-4) Anadara, > sort(table(DataPBDB[,"genus"]))
-5) 0-66 Ma, > Anadara<-subset(DataPBDB, DataPBDB[,"genus"]=="Anadara")
+
+2) `> tapply(DataPBDB[,"max_ma"], DataPBDB[,"genus"], max)`
+
+3) `> tapply(DataPBDB[,"min_ma"], DataPBDB[,"genus"], min)`
+
+4) `Anadara, > sort(table(DataPBDB[,"genus"]))`
+
+5) 
+
+````R
+# 0-66 Ma
+> Anadara<-subset(DataPBDB, DataPBDB[,"genus"]=="Anadara")
 > max(Anadara[,"max_ma"])
 [1] 66
 > min(Anadara[,"min_ma"])
 [1] 0
+````
 
-Problem Set 2
+## Problem Set 2
 1) mean(sample(Lucina[,"paleolng"],length(Lucina[,"paleolng"]),replace=TRUE))
-> #mean finds the average of the data, sample takes numbers from a pool of data in this case the paleolng column of the Lucina dataset, length uses the length of that vector, replace=TRUE means a datapoint may be sampled more than once
-2) > plot(density(ResampledMeans))
+
++ #mean finds the average of the data, sample takes numbers from a pool of data in this case the paleolng column of the Lucina dataset, 
++ length uses the length of that vector, 
++ replace=TRUE means a datapoint may be sampled more than once
+
+2) `> plot(density(ResampledMeans))`
+
 It looks approximately Gaussian.  It has the distinctive bell curve shape of a normal distribution.
-3) > mean(ResampledMeans)
+
+3) 
+````R
+> mean(ResampledMeans)
 [1] 24.16227
 It's pretty close.
-4) > sort(ResampledMeans)
+````
+
+4) `> sort(ResampledMeans)`
 5) 2.5th percentile: 21.81826, 97.5th percentile: 26.2861
+
+````R
 > SORTED<-sort(ResampledMeans)
 > SORTED[25]
 [1] 21.81826
 > SORTED[975]
 [1] 26.2861
+````
+
 6) This gives us an interval of 95% which is one of the most commonly used confidence intervals in statistics.
 
-Problem Set 3
+> Kind of a weak answer, -0.5 points
+
+## Problem Set 3
+
 1) Likely, I'm 95% sure.
-2) > Dallarca<-subset(DataPBDB, DataPBDB[,"genus"]=="Dallarca")
+
+2) 
+````R
+> Dallarca<-subset(DataPBDB, DataPBDB[,"genus"]=="Dallarca")
 > estimateExtinction(Dallarca[,"min_ma"],0.95)
 Earliest   Latest 
  2.58800 -3.88749
+````
+
 3) Based solely on the confidence interval, yes, but I'm a human being which means I'm smarter than R.
+
+> We all certainly hope so.
+
 4) I would trust the fossil record because we know that Dallarca is no longer around, and the last evidence for it is at the beginning of this confidence interval.
 
-Problem Set 4
+> Okay, but why is the fossil record reliable in this case?
+
+## Problem Set 4
+
 1) Species are not randomly distributed throughout the world; they exist in a geographic range that corresponds to their realized niche.
+
 2) The geological record is not random; the strata are in chronosequence.
 
-Problem Set 5
+## Problem Set 5
+
 1) 67617, 59096, 8521 lost
+
 2) 1018, 532, 52.3%
-3) MinExtantData<-tapply(ExtantData[,"min_ma"], ExtantData[,"genus"], min)
+
+3)
+````R
+MinExtantData<-tapply(ExtantData[,"min_ma"], ExtantData[,"genus"], min)
 MaxExtantData<-tapply(ExtantData[,"max_ma"], ExtantData[,"genus"], max)
-4) > which(MinExtantData!=0)
-5) > Scrobicularia<-subset(ExtantData, ExtantData[,"genus"]=="Scrobicularia")
+````
+
+4) `> which(MinExtantData!=0)`
+
+5) 
+````R
+> Scrobicularia<-subset(ExtantData, ExtantData[,"genus"]=="Scrobicularia")
 > estimateExtinction(Scrobicularia[,"min_ma"], 0.95)
 # Similarly for all genera.
+````
 90%
