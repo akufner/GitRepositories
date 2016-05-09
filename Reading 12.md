@@ -1,7 +1,7 @@
 The Red Queen and the Court Jester: Species Diversity and the Role of Biotic and Abiotic Factors Through Time
 Michael J. Benton
 
-> 10/10
+> 9/10
 	
 In this article, Benton explores the two overarching models that try to describe the causes of evolution. The model that describes biotic factors that cause evolution is called the Red Queen model which boils down to running just to stay in place. The model that describes abiotic factors that cause evolution is the Court Jester model which is essentially that unpredictable changes in the physical environment lead to evolutionary changes. These two models are not mutually exclusive, and according to this article, they work at very different scales. Factors like competition can have an impact at a local level on geologically short time scales, but factors like a changing climate or landscape can have much more global and enduring impacts on diversity. The author reviewed several different studies and showed how they were related to the Red Queen, Court Jester, and a combination of the two called the multilevel mixed model. There were far too many to go into any detail about all of them, but I want to point out some that were of interest to me. He wrote about the latitudinal diversity gradient which is in reference to greater amounts of diversity in the tropics than in temperate or polar latitudes. Another interesting study used comparisons of sister taxa, two subgroups of antelopes, and testing of the resource-use hypothesis. 
 
