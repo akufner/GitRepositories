@@ -1,6 +1,10 @@
-Problem Set 1
+> 20/20
 
-1)> TriassicSynapsids<-downloadPBDB("Synapsida", "Anisian", "Rhaetian")
+## Problem Set 1
+
+1)
+````R
+> TriassicSynapsids<-downloadPBDB("Synapsida", "Anisian", "Rhaetian")
 > TriassicDiapsids<-downloadPBDB("Diapsida", "Anisian", "Rhaetian")
 > JurassicSynapsids<-downloadPBDB("Synapsida", "Jurassic", "Neogene")
 > JurassicDiapsids<-downloadPBDB("Diapsida", "Jurassic", "Neogene")
@@ -8,8 +12,11 @@ Problem Set 1
 > TriassicDiapsids<-cleanRank(TriassicDiapsids, "genus")
 > JurassicSynapsids<-cleanRank(JurassicSynapsids,"genus")
 > JurassicDiapsids<-cleanRank(JurassicDiapsids,"genus")
+````
 
-2)> TriassicSynapsids<-length(unique(TriassicSynapsids[,"genus"]))
+2)
+````R
+> TriassicSynapsids<-length(unique(TriassicSynapsids[,"genus"]))
 > TriassicSynapsids
 [1] 116
 > TriassicDiapsids<-length(unique(TriassicDiapsids[,"genus"]))
@@ -21,8 +28,11 @@ Problem Set 1
 > JurassicDiapsids<-length(unique(JurassicDiapsids[,"genus"]))
 > JurassicDiapsids
 [1] 2753
+````
 
-3) TriSyn<-unique(TriassicSynapsids[,"genus"])
+3) 
+````R
+> TriSyn<-unique(TriassicSynapsids[,"genus"])
 > TriDia<-unique(TriassicDiapsids[,"genus"])
 > JurSyn<-unique(JurassicSynapsids[,"genus"])
 > JurDia<-unique(JurassicDiapsids[,"genus"])
@@ -38,14 +48,20 @@ Problem Set 1
 > DiapsidVictims<-setdiff(TriDia, JurDia)
 > length(DiapsidVictims)
 [1] 352
+````
 
-4)> SynapsidOdds<-(length(SynapsidSurvivors)/length(JurSyn))/(length(SynapsidVictims)/length(JurSyn))
+4)
+````R
+> SynapsidOdds<-(length(SynapsidSurvivors)/length(JurSyn))/(length(SynapsidVictims)/length(JurSyn))
 > DiapsidOdds<-(length(DiapsidSurvivors)/length(JurDia))/(length(DiapsidVictims)/length(JurDia))
 > OddsRatio<-DiapsidOdds/SynapsidOdds
 > log(OddsRatio)
 [1] 0.222891
+````
 
-5)> StandardError<-sqrt(1/length(SynapsidSurvivors) + 1/length(SynapsidVictims) + 1/length(DiapsidSurvivors) + 1/length(DiapsidVictims))
+5)
+````R
+> StandardError<-sqrt(1/length(SynapsidSurvivors) + 1/length(SynapsidVictims) + 1/length(DiapsidSurvivors) + 1/length(DiapsidVictims))
 > StandardError
 [1] 0.3877175
 > UpperLimit<-log(OddsRatio)+(StandardError*1.96)
@@ -54,25 +70,41 @@ Problem Set 1
 [1] 0.9828172
 > LowerLimit
 [1] -0.5370353
+````
+
 No, the lower limit is negative so there is a possibility that there was an advantage for synapsids.
 
-Problem Set 2
+## Problem Set 2
 
-1)> Triassic<-downloadPBDB(c("Synapsida", "Diapsida"), "Anisian", "Rhaetian")
+1)
+````R
+> Triassic<-downloadPBDB(c("Synapsida", "Diapsida"), "Anisian", "Rhaetian")
 > Jurassic<-downloadPBDB(c("Synapsida", "Diapsida"), "Jurassic", "Neogene")
 > Triassic<-cleanRank(Triassic, "genus")
 > Jurassic<-cleanRank(Jurassic,"genus")
+````
 
-2)> MeanLatJur<-tapply(Jurassic[,"paleolat"],Jurassic[,"genus"],mean)
+2)
+````R
+> MeanLatJur<-tapply(Jurassic[,"paleolat"],Jurassic[,"genus"],mean)
 > MeanLatTri<-tapply(Triassic[,"paleolat"],Triassic[,"genus"],mean)
+````
 
-3)> TriassicSurvivors<-intersect(unique(Triassic[,"genus"]), unique(Jurassic[,"genus"]))
+3)
+````R
+> TriassicSurvivors<-intersect(unique(Triassic[,"genus"]), unique(Jurassic[,"genus"]))
 > TriassicVictims<-setdiff(unique(Triassic[,"genus"]), unique(Jurassic[,"genus"]))
+````
 
-4)> TriassicSyn<-intersect(unique(Triassic[,"genus"]), TriSyn)
+4)
+````R
+> TriassicSyn<-intersect(unique(Triassic[,"genus"]), TriSyn)
 > TriassicDia<-intersect(unique(Triassic[,"genus"]), TriDia)
+````
 
-5)> TJMatrix<-merge(MeanLatTri,TJVictims,all=TRUE,by="row.names")
+5)
+````R
+> TJMatrix<-merge(MeanLatTri,TJVictims,all=TRUE,by="row.names")
 > TJMatrix<-transform(TJMatrix,row.names=Row.names,Row.names=NULL)
 > colnames(TJMatrix)<-c("MeanLatitudes", "Survivor/Victim")
 > TJMatrix[is.na(TJMatrix[,"Survivor/Victim"]),]<-1
@@ -103,3 +135,4 @@ AIC: 312.08
 Number of Fisher Scoring iterations: 5
 
 Latitude does not seem to be a good predictor of extinction in the Triassic-Jurassic extinction since each degree in latitude increased survivorship by less than 0.1%.
+````
