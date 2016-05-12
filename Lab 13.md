@@ -1,3 +1,5 @@
+> 20/20
+
 # Problem Set 1
 1)
 ````R
@@ -8,6 +10,9 @@
 [1] 68 53
 # 53 is the gamma diversity
 ````
+
+> that's well below the correct number. I'm not sure what happened. You must have downloaded the data wrong. I'll let it slide though since you did check it in the correct way.
+
 2)
 ````R
 > meanOrd<-mean(rowSums(OrdovicianMatrix))
@@ -18,6 +23,7 @@
 [1] 21
 # This is the alpha diversity
 ````
+
 3)
 ````R
 > betaOrd<-23-meanOrd
